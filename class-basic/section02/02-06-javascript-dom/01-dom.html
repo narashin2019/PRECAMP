@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>돔(Document => HTML문서) 조작하기</title>
+    <script>
+        //css에서는 클래스 사용해서 여러부분을 바꾸는데 js는 특정한 것만 수정하기 때문에 id를 쓴다.
+
+        function 바꾸는기능() {
+            document.getElementById("여기바꿀래요").innerText = "반갑습니다"
+            // 해당아이디의 전체 코드를 가져옴.그코드의이너텍스트(안녕하세요) = "바꿀내용"
+
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+<div id="여기바꿀래요">안녕하세요</div>
+<button onclick="바꾸는기능()">바꾸자</button>
+
+
+</html>

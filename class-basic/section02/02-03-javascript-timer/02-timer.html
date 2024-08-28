@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>타이머 실습</title>
+    <script>
+        function 타이머(){
+
+            let 시간 = 180
+            
+            //시간지연함수(기능, 초) 1초1000
+            setInterval(function(){
+                
+                // //값이 변하니까 let (3분=180초) >> 시간변수를 함수 바깥으로 빼야한다!!!
+                
+                
+                const 분 = Math.floor(시간/60) //분 == 60으로 나눈 몫
+
+                //초 == 60으로 나눈 나머지
+                //나머지연산자 % >> 알아서 나머지 구해줌
+                const 초 = 시간 % 60
+
+                console.log("남은시간" + 분 +":" + 초 )
+
+                시간 = 시간 - 1
+
+            }, 1000)
+            
+
+
+            }
+
+    </script>
+
+</head>
+<body>
+
+    <button onclick="타이머()">타이머 시작</button>
+    
+</body>
+</html>

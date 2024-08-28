@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.back {
+    box-sizing: border-box;  /* 빼도됨? */
+    margin: 0;  /* 빼도됨? */
+
+    padding: 0px, 0px, 80px, 0px;
+    width: 1920px; /* Fixed */
+    height: 1208px;  /* Hug */
+    background-color: #491449;
+}
+
+.header {
+    background-color: skyblue; /* 임시 */
+    
+    width: 1920px; /* Fill */
+    height: 80px; /* Hug */
+    padding: 16px, 80px, 16px, 80px;
+
+    gap: 24px; /* ? */
+    opacity: 0px; /* ? */
+}
+
+.body {
+    background-color: rgb(153, 245, 153); /* 임시 */
+
+    width: 1840px; /* Hug */
+    height: 1048px; /* Hug */
+
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+
+    /* 
+    gap: 0px;
+    opacity: 0px; 
+    */
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* (body1번) 사이드바 */
+.sidebar {
+    background-color: rgb(121, 36, 64); /* 임시 */
+
+    width: 80px; /* Hug */
+    height: 1048px; /* Fill */
+    padding: 16px, 20px, 0px, 20px;
+    
+    /* 
+    gap: 0px;
+    opacity: 0px; 
+    */
+    
+    /* 부모1 = 자식1-1 + 자식1-2 
+    flex-direction: ;
+    justify: space-between; 
+    */
+
+}
+
+
+
+/*
+.sidebar상단 {
+    부모1의 자식1-1 
+}
+*/
+
+/*
+.sidebar하단 {
+    부모1의 자식1-2
+    
+}
+*/
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* (body2번) 사이드메뉴 */
+
+.sidemenu {
+    background-color: rgb(231, 101, 61); /* 임시 */
+    width: 400px; /* Fixed */
+    height: 1048px; /* Fixed */
+
+
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+/* (body3번) 바디메인 = 2개 부모 */
+
+.bodymain {
+    width: 1360px; /* Fixed */
+    height: 1048px; /* Fixed */
+    background-color: #D5BCE4;
+
+    /* 
+    gap: 40px;
+    opacity: 0px; */
+
+    /* 회원가입입력화면과  메인이미지를 flex */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    /* align-items: flex-end; 여긴 정해진(fixed_ width heisght 값이 있기 때문에 필요 없음 or 콘테이너 -최대값최소값주면됨 */
+
+
+} 
+
+.회원가입입력화면 {
+    width: 680px; /* Fixed? */
+    height: 1048px; /* Fixed? */
+    background-color: #D5BCE4;
+}
+
+.메인이미지 {
+    width: 680px; /* Fixed? */
+    height: 1048px; /* Fixed? */
+
+    background-image: url('./assets/icon/mainimg.png');
+   
+    /* 
+    background-size: cover;
+    gap: 0px;
+    opacity: 0px; 
+    */
+
+} 
+
+
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+

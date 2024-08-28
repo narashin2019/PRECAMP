@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>인풋 검증 실습</title>
+
+    <script>
+
+        function 인풋검증기능(){
+            
+            console.log("뭔가를 입력하셨군요!")
+
+            const 이메일 = document.getElementById("이메일입력창").value
+            const 여자선택 = document.getElementById("여자선택").checked
+            const 남자선택 = document.getElementById("남자선택").checked
+            const 동의했니 = document.getElementById("동의하기체크").checked
+
+            console.log(이메일)
+            console.log(여자선택)
+            console.log(남자선택)
+            console.log(동의했니)
+
+
+            // 검증조건 세 개
+            const 인풋창다채웠는지 = 이메일 !== '' // 우측항 계산해서 왼쪽변수에 담음 >> true가 담겨야함
+            const 성별선택했는지 = (여자선택 === true) || (남자선택 === true)
+            const 동의했는지 = 동의했니 === true //동의하기체크되어있으면 true들거가고 체크안하면 false들어감
+
+            //위의 세가지를 조건문으로 인풋검증 함
+            if( (인풋창다채웠는지 === true) && (성별선택했는지 === true) && (동의했는지 === true) ){
+                // 모두다 채웠을때 실행할 내용
+                //console.log("세가지다입력함 버튼활성화")
+
+                document.getElementById("가입버튼").style = "background-color: yellow"
+                document.getElementById("가입버튼").disabled = false 
+            } else {
+                // 모두다 채우지 않았을 때 실행할 내용
+                //console.log("else인 상황 버튼비활성화 유지")
+
+                document.getElementById("가입버튼").style = "background-color: none" //none > 없다
+                document.getElementById("가입버튼").disabled = true 
+                // disabled 속성을 true로 해서 조건 다 못채웠으니 버튼 못누르게함
+
+            }
+
+            // 이 기능은 html input 태그 안에 oninput="인풋검증기능()"으로 실행되는 것.
+            //검증하려는 거 3개 전부 oninput="인풋검증기능()" 넣어줘야함!!!
+            //이메일에만 넣으면 제일 마지막으로 이메일을 체크해야만 검증됨
+        }
+
+    </script>
+</head>
+<body>
+
+    이메일: <input id="이메일입력창" type="text" oninput="인풋검증기능()" /><br />
+
+    <input id="여자선택"type="radio" name="성별그룹" oninput="인풋검증기능()" />여성
+    <input id="남자선택" type="radio" name="성별그룹" oninput="인풋검증기능()" />남성<br />
+    <input id="동의하기체크" type="checkbox" oninput="인풋검증기능()" />동의합니까?<br />
+    <button id="가입버튼" disabled>회원가입</button>    
+
+    <!-- 회원가입버튼: 기본 비활성화 disabled
+    위에 뭔가 입력되거나 체크했을 때 버튼 활성화되는 기능만들기 function 인풋검증기능(){}
+    onclick oninput in....
+    oninput>> 이메일칸에 값이 입력되거나 지워지거나 뭐라도 바뀌면 콘솔에서 뭔가를 입력하셨군요 뜸 -->
+
+</body>
+</html>

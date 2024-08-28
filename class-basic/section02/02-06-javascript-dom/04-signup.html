@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title></title>
+    <script>
+        function 가입자보여주는기능(가입자이름받는곳){
+            alert("클릭하셨군요!")
+            alert("가입하신 이름은: " + 가입자이름받는곳 + "입니다.")
+            // ``으로 변환해볼것
+
+            //함수끼리 값을 주고받으려면 ()안에 넣으면 된다
+            //""안에 문자열을 쓸때는 ''f를 쓴다.
+            //가입하는기능(){} 함수에서 보낸 $가입자명 변수를()안에 있는 것들이 주고받는거
+            //여기함수(가입자이름받는곳)의 ()안에 받는다 받는다.
+
+
+        }
+
+
+        function 가입하는기능(){
+
+            const 가입자명 = document.getElementById("이름입력창").value
+
+            //document.getElementById("가입자보여주는곳").innerText = 가입자명 (1단계)
+            //document.getElementById("가입자보여주는곳").innerHTML = "<div>가입자명</div>"
+            //innerHTML은 해당 태그를 가져오는 것. 입력하면 결과값도 태그에 감싸진 문자열이 나타나야함
+            // 따라서 ``안 태그에 onclick 같은 기능도 넣을 수 있다,
+            document.getElementById("가입자보여주는곳").innerHTML = `
+                <div>${가입자명}</div>
+                <button>${가입자명}</button>
+
+                <div onclick="가입자보여주는기능('${가입자명}')">${가입자명}</div>
+
+            `
+        }
+
+    </script>
+</head>
+<body>
+    <!-- 이너텍스트=현재는 공란 -->
+    <div id="가입자보여주는곳"></div> 
+    
+    <!-- 입력된 값 value 를 가져올 수 있음 -->
+    이름을 입력하세요: <input type="text" id="이름입력창"/>
+
+    <!-- 이너텍스트로 스크립트에 가져감 -->
+    <button onclick="가입하는기능()">회원가입</button>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <title>내장객체 실습</title>
+    <script>
+        //function():펑션과 괄호 사이에 이름 생략하는 것은 내장객체이기 떄문
+        //function() : 괄호안에 값을 주고받을 수 있다
+        //
+        //콘솔로그에서 // undefined는 값이 없다는 말
+        //js실행순서: 수학객체.랜덤() >> 스크립트에 램덤함수로 감 > 랜덤함수가 5를 리턴함 > 콘솔로그5출력
+        //내장함수, 내장객체는 첫글자 대문자
+        
+        // 1.수학객체
+        const 수학객체 = 
+        {
+            max: function() {
+                console.log("최대값을 구한다.")
+            },
+
+            random: function() {    
+                return 5
+            },
+
+            round: function(반올림한값) {
+                console.log("반올림할 대상" + 반올림한값)
+            
+            }
+        }
+        수학객체.max()
+        수학객체.round(1.5)
+
+        const 내가만든랜덤숫자 = 수학객체.random()
+        console.log(내가만든랜덤숫자) 
+        
+        const 나의랜덤숫자 = Math.random()
+        console.log(나의랜덤숫자)
+
+
+        // 2.날짜객체
+        const 나의날짜 = new Date()
+
+        나의날짜.getFullYear()
+        나의날짜.getMonth()
+        나의날짜.getDate() //date = 날짜 / day = 요일
+
+        //출력은 위에 것을 변수에 넣고 콘솔찍어도 되고 아래처럼 걍 넣어도 됨
+        console.log(나의날짜.getFullYear())
+        console.log(나의날짜.getMonth()) //8월인데 7이 찍힘 >> 그래서 getMonth() +1 해야 현재 월 구할 수 있음.
+        console.log(나의날짜.getMonth()+1)
+        console.log(나의날짜.getDate())
+        console.log(나의날짜.getFullYear() + "-" + (나의날짜.getMonth()+1) + "-" + 나의날짜.getDate())
+        //문자열더하기가 들어가면 전체가 문자열이 된다.
+
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
